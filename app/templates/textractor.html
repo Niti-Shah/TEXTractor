@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <title>TEXTractor</title>
+  <link rel="shortcut icon" href="../static/images/Computer.jpg">
+</head>
+
+<style>
+	.navbar-blue {
+	  background-color: #063349;	
+  }
+  
+  .navbar{
+	  box-shadow: 2px 2px 5px #fa7d39;
+  }  
+  
+  .font-orange{
+	  color: #fa7d39;
+	  font-size: 1.4rem;
+  }
+  
+  .text-custom-color-o{
+	  color: #fa7d39;
+  }
+  
+  .text-custom-color-b{
+	  color: #063349;
+  }
+  
+  .bg-custom-color-o{
+	  background-color: #fa7d39;
+  }
+  
+  .bg-custom-color-b{
+	  background-color: #063349;
+  }
+  
+  .li .nav-item:hover{
+	  color: white;
+  }
+  
+  .navbar-blue .navbar-toggler {
+	  color: #fa7d39;
+	  border-color: #fa7d39;
+  }
+  
+  #showcase{
+	  position: relative;
+	  background: url(../static/images/bg.jpg);
+	  min-height: 500px;
+  }
+	
+  #showcase .primary-overlay{
+	  background-color: #063349;
+	  opacity: 0.8;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  height: 500px;
+	  width: 100%
+  }
+  </style>
+
+<body>
+    <!-- START HERE -->
+	<nav class="navbar navbar-expand-md navbar-blue fixed-top py-4" id="main-nav">
+		<div class="container">
+		  <a href="#home" class="navbar-brand">
+			<img src="../static/images/Computer.jpg" height="60">
+			<h3 class="d-inline align-middle font-orange">TEXTractor</h3>
+		  </a>
+		  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a href="{{ url_for('textractor') }}" class="nav-link font-orange">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="#showcase" class="nav-link font-orange">About</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="#juxtapose" class="nav-link font-orange">Juxtapose</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{{ url_for('index') }}" class="nav-link font-orange">TEXTractor</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+
+	<!--BOXES-->
+	<section id="boxes" class="py-5">
+		<div class="container" style="padding-top: 100px;">
+			<div class="display-4 text-center text-custom-color-o" style="font-size: 3rem; font-weight: bold;">Automated Text Extraction from Images using OCR System</div>
+			<br>
+		  <div class="row">
+			<div class="col-md-3">
+			  <div class="card text-center border-custom-color-b mb-resp">
+				<div class="card-body">
+				  <h3 class="text-custom-color-b" style="font-size: 1.4rem">
+					Higher Productivity
+				  </h3>
+				  <p class="text-muted">
+					TEXTractor helps users to achieve higher productivity by facilitating quicker data retrieval when required. The time and effort which the users were required to put in for extracting relevant data can now be channelized to focus on core activities.
+				  </p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="card text-center bg-custom-color-b mb-resp">
+				<div class="card-body">
+				  <h3 class="text-white" style="font-size: 1.4rem">
+					Makes Documents Editable
+				  </h3>
+				  <p class="text-white">
+					Scanned documents need to be edited most of the time, particularly when some information must be updated. TEXTractor converts data to editable text which is of great help when there are contents that need constant updates.
+				  </p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="card text-center border-custom-color-b mb-resp">
+				<div class="card-body">
+				  <h3 class="text-custom-color-b" style="font-size: 1.4rem">
+					Disaster Recovery
+				  </h3>
+				  <p class="text-muted">
+					When data is stored electronically in secure servers and distributed systems, it remains safe even under emergency situations. When there are sudden fire breakouts or natural calamity, the digitized data can be quickly retrieved.
+				  </p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="card text-center bg-custom-color-b">
+				<div class="card-body">
+				  <h3 class="text-white" style="font-size: 1.4rem">
+					Eliminate Erroneous Data Entry
+				  </h3>
+				  <p class="text-white">
+					Data entry tasks are often time-consuming and littered with errors. Copying information from one medium to another is hardly stimulating, so it comes as no surprise that this task is better left to TEXTractor.
+				  </p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	<!--SHOWCASE-->
+	<section id="showcase" class="py-5">
+		<div class="primary-overlay text-white">
+		  <div class="container">
+				<h1 class="display-4 mt-5 text-custom-color-o text-center" style="padding-top: 20px; font-weight: 400; font-size: 2.5rem">
+					The genius of Emanuel Goldberg
+				</h1>
+				<br>
+				<p class="lead" style="text-align: justify;">
+					OCR traces its roots back to telegraphy. On the eve of the First World War, physicist Emanuel Goldberg invented a machine that could read characters and convert them into telegraph code. In the 1920s, he went a step further and created the first electronic document retrieval system.
+
+					At this time, businesses were microfilming financial records – great in principle, but quickly retrieving specific records from spools of film was nigh on impossible. To overcome this, Goldberg used a photoelectric cell to do pattern recognition with the help of a movie projector. By repurposing existing technologies, he took the first steps towards the automation of record keeping. The US patent for his “Statistical Machine” was later acquired by IBM.
+					
+					Since then, OCR technology has proliferated, with businesses all over the world relying on it to help reduce overheads when it comes to converting extracting data from paper documents.
+			  </p>
+			  <a href="https://www.cloud-trade.com/blogs/2019/03/19/a-brief-history-of-ocr#:~:text=OCR%20traces%20its%20roots%20back,first%20electronic%20document%20retrieval%20system." target="_blank" class="btn btn-outline-secondary btn-lg text-custom-color-o" style="border-color: #fa7d39">
+				<i class="fas fa-arrow-right"></i>&nbsp;Read More
+			  </a>
+			  <br><br>
+			</div>
+		  </div>
+	  </section>
+
+	<!--COMPARING WITH GOOGLE LENS-->
+	<section id="juxtapose">
+		<div class="container mt-5">
+			<h1 class="display-3 text-center text-custom-color-b" style="font-size: 3rem; font-weight: bold;">Other OCR Tools vs TEXTractor</h1>
+			<br>
+			<div class="row">
+				<div class="col-lg-8 col-md-8 col-sm-12">
+					<h3 class="text-custom-color-o">Google Lens will collect information from you</h3>
+					<p class="lead" style="text-align: justify;">If you are concerned about sharing your information with other parties, you will need to think twice before you start using Google Lens. To deliver perfect service, Google Lens is using information collected by you. When you install Google Lens, you can expect it to continue collecting your information. Some people don’t like this at all. Hence, Google Lens is not something available for such individuals to consider. Once you install the Google Lens app, you might figure out that it is relatively invasive.</p>
+					
+					<p class="lead" style="text-align: justify;">TEXTractor on the other hand is quite secure because it is not an open source software.</p>
+
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<img src="../static/images/1.JPG" width="400">
+				</div>
+			</div>
+			<div class="mt-5"></div>
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<img src="../static/images/2.jpeg" width="350">
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-12">
+					<h3 class="text-custom-color-o">Adobe Scan requires money</h3>
+					<p class="lead" style="text-align: justify;">Adobe scan is an impressive app with high-level functionality that will cover all of your business needs easily. The drawbacks are that it requires an account to set up and you have to pay to unleash its full potential. Only limited services can be accessed in the free version. TEXTractor is free and therefore can be used to its full potential without any additional cost.</p>
+
+					<p class="lead" style="text-align: justify;">
+						There is also a limitation of saving 25 scanned document at a time in the app. No such limitation is present in TEXTractor.				
+					</p>
+				</div>
+			</div>
+			<div class="mt-5"></div>
+			<div class="row">
+				<div class="col-lg-8 col-md-8 col-sm-12">
+					<h3 class="text-custom-color-o">Google Drive has some limitations</h3>
+					<p class="lead" style="text-align: justify;">There are a few rules of thumb to produce optimal results from OCR in Google Drive. The file needs to be high resolution with clear contrasts and even lighting. Standard typefaces, such as Helvetica and Times New Roman, will produce better results than more obscure typefaces. TEXTractor has no such limitations. It can extract text of any font and any background accurately.</p>
+
+					<p class="lead" style="text-align: justify;">
+						There are a number of apps and add-ons that work with Google Drive. Some first-party apps from Google work pretty well, but some third-party apps integrated with Google Drive are often bloated adware. Although all the third-party apps that we found were free to install, many of the apps require payment to unlock all of their features. This is another major drawback.
+					</p>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<img src="../static/images/3.jpeg" width="350">
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<br><br><br>
+
+	<!-- Footer -->
+	<footer class="page-footer font-small blue">
+		<div class="footer-copyright text-center py-3" style="background-color: #063349; color: #fa7d39;">Copyright &copy; <span id="year"></span> Arya Karambelkar, Param Mamania, Niti Shah
+		</div>
+  	</footer>
+  <!-- Footer -->
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+	<script>
+		// Get the current year for the copyright
+		$('#year').text(new Date().getFullYear());
+	</script>
+</body>
+
+</html>

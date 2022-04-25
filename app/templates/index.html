@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link href="../static/css/materializee.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <title>TEXTractor</title>
+  <link rel="shortcut icon" href="../static/images/Computer.jpg">
+</head>
+
+<style>
+  .navbar-blue {
+	background-color: #063349;	
+}
+
+.navbar{
+	box-shadow: 2px 2px 5px #fa7d39;
+}  
+
+.font-orange{
+	color: #fa7d39;
+	font-size: 1.4rem;
+}
+
+.text-custom-color-o{
+	color: #fa7d39;
+}
+
+.text-custom-color-b{
+	color: #063349;
+}
+
+.bg-custom-color-o{
+	background-color: #fa7d39;
+}
+
+.bg-custom-color-b{
+	background-color: #063349;
+}
+
+.li .nav-item:hover{
+	color: white;
+}
+
+.navbar-blue .navbar-toggler {
+    color: #fa7d39;
+    border-color: #fa7d39;
+}
+
+#showcase{
+	position: relative;
+	background: url(./Images/bg.jpg);
+	min-height: 500px;
+}
+  
+#showcase .primary-overlay{
+	background-color: #063349;
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 500px;
+	width: 100%
+}
+</style>
+<body>
+    <!-- START HERE -->
+	<nav class="navbar navbar-expand-md navbar-blue fixed-top py-4" id="main-nav">
+		<div class="container">
+		  <a href="#home" class="navbar-brand">
+			<img src="../static/images/Computer.jpg" height="60">
+			<h3 class="d-inline align-middle font-orange">TEXTractor</h3>
+		  </a>
+		  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a href="{{ url_for('textractor') }}" class="nav-link font-orange">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{{ url_for('textractor') }}" class="nav-link font-orange">About</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{{ url_for('textractor') }}" class="nav-link font-orange">Juxtapose</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="#" class="nav-link font-orange">TEXTractor</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+
+	<!--TEXTractor-->
+	<div style="margin-top: 180px"></div>	
+	<div class="section no-pad-bot" id="index-banner">
+		<div class="container">
+			<form action='/index' method="post" class="col s12" enctype="multipart/form-data">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="row">
+						<label for="first_name">Upload Image Here</label>
+					</div>
+					<div class="row">
+						<div class = "file-field input-field">
+							<div class = "btn">
+								<span>Browse</span>
+								<input type = "file" name="image_upload" id="image_upload" />
+							</div>
+							<div class = "file-path-wrapper">
+								<input class = "file-path validate" type = "text" placeholder = "Upload Image" name="image_name" id="image_name" />
+							</div>
+						</div>
+					</div>
+					<div class="row text-center" style="margin-top: 50px; justify-content: center">
+						<button id="submit" type="submit" class="btn btn-large" style="background-color: #063349">Extract</button>
+					</div>
+
+					<div>
+						{% if text %}
+						<br>
+						<h5>Extracted Text</h5>
+						{% for i in text: %}
+						<p>{{ i }}</p> 
+						{% endfor %}
+						{% endif %}
+					</div>
+				</div>
+				<div class="input-field col-md-8">
+					<div style="text-align: center; padding-top: 50px; margin-left: 100px;">
+						<img src="{{ url_for('static',filename=full_filename) }}" width="500" height="300">
+					  </div>
+				</div>
+			</div>
+			</form>
+
+			<!-- <form action='/index' method="post" class="col s12" enctype="multipart/form-data">
+				<div class="row text-center" style="margin-top: 50px; justify-content: center">
+					<button id="submit" type="submit" class="btn btn-large" style="background-color: #063349">Extract</button>
+				</div>
+			</form> -->
+			
+
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- Footer -->
+	<footer class="page-footer font-small blue">
+		<div class="footer-copyright text-center py-3" style="background-color: #063349; color: #fa7d39;">Copyright &copy; <span id="year"></span> Arya Karambelkar, Param Mamania, Niti Shah
+		</div>
+	</footer>
+	<!-- Footer -->
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+	<script src="./static/js/materialize.js"></script>
+  <script type="text/javascript">
+    var imagebox = document.getElementById('imagebox');
+    var textbox = document.getElementById('textboxes');
+
+    document.getElementById('image_upload').onchange = function () {
+        document.getElementById('image_name').value = this.value.slice(12,100);
+    };
+
+
+  </script>
+  <script>
+	// Get the current year for the copyright
+	$('#year').text(new Date().getFullYear());
+</script>
+</body>
+
+</html>
