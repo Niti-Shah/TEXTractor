@@ -55,6 +55,8 @@ def index():
 		name = ''.join(random.choice(letters) for i in range(10)) + '.png'
 		full_filename =  'uploads/' + name
 
+		pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+
 		# Extracting text from image
 		custom_config = r'-l eng --oem 3 --psm 6' #language is selected as eng, oem specifies OCR engine mode, 3 is default, PSM is page segmentation mode, 6 is single uniform block of text.
 		text = pytesseract.image_to_string(image,config=custom_config)
@@ -67,8 +69,8 @@ def index():
 		# 	new_string = new_string.replace(character, "")
 
 		#text to speech part--------------------------------------------------------------------
-		f = open("output.txt", "w")
-		f.write(new_string1)
+		# f = open("output.txt", "w")
+		# f.write(new_string1)
 
 
 		# Converting string into list to dislay extracted text in seperate line

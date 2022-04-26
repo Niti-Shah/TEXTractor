@@ -1,0 +1,1 @@
+web: gunicorn textractor-ocr.wgsi - -log-file -
