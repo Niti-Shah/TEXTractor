@@ -1,1 +1,1 @@
-web: gunicorn textractor-ocr.wgsi - -log-file -
+web: gunicorn wsgi:app

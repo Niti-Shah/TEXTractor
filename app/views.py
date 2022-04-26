@@ -1,5 +1,5 @@
 # Important imports
-from app import app
+from app.main import app
 from flask import request, render_template
 import cv2
 import numpy as np
