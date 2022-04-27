@@ -16,6 +16,11 @@
 </head>
 
 <style>
+
+	.nohover:hover {
+		color: white;
+	}
+
   .navbar-blue {
 	background-color: #063349;	
 }
@@ -108,7 +113,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="row">
-						<label for="first_name">Upload Image Here</label>
+						<label for="first_name" style="font-weight: 500; font-size: 20px">Upload Image Here</label>
 					</div>
 					<div class="row">
 						<div class = "file-field input-field">
@@ -121,8 +126,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="row text-center" style="margin-top: 50px; justify-content: center">
+					<div class="row text-center" style="margin-top: 50px; margin-left: 20px;">
 						<button id="submit" type="submit" class="btn btn-large" style="background-color: #063349">Extract</button>
+						<form class="input" id="voice-form" method="post">
+							<a href="{{ url_for('voice') }}" class="btn btn-large nohover" style="margin-left: 40px; text-align: center; letter-spacing: 0.5px; height: 50px; padding: 5px 25px; background-color: #063349; font-size: 17px">
+								  SPEECH
+							</a>
+						</form>
 					</div>
 
 					<div>
@@ -140,15 +150,9 @@
 						<img src="{{ url_for('static',filename=full_filename) }}" width="500" height="300">
 					  </div>
 				</div>
+			  
 			</div>
-			</form>
-
-			<!-- <form action='/index' method="post" class="col s12" enctype="multipart/form-data">
-				<div class="row text-center" style="margin-top: 50px; justify-content: center">
-					<button id="submit" type="submit" class="btn btn-large" style="background-color: #063349">Extract</button>
-				</div>
-			</form> -->
-			
+			</form>			
 
 		  </div>
 		</div>
