@@ -94,7 +94,7 @@ def text_to_speech(text, gender):
 	# Setting up voice rate
     engine.setProperty('rate', 125)
 
-    # Change voices: 0 for male and 1 for female
+    # Change voices: 0 for male
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[code].id)
 
